@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 
 export const MenuWrapper = styled.nav`
@@ -17,7 +18,7 @@ MenuWrapper.LeftSide = styled.div`
   	order: 1;
 `;
 
-MenuWrapper.CentraltSide = styled.div`
+MenuWrapper.CentralSide = styled.div`
 	padding: 12px;
 	margin: 0;
 	order: 3;
