@@ -1,26 +1,26 @@
 import React from 'react'
 import { Logo } from '../../../theme/Logo'
+import Text from '../foundation/Text'
 import { Button } from '../Button'
 import { MenuWrapper }  from './styles/MenuWrapper'
 
+const links = [
+    {
+        texto: 'Home',
+        url: '/',
+    },
+    {
+        texto: 'Perguntas frequentes',
+        url: '/faq',
+    },
+    {
+        texto: 'Sobre',
+        url: '/sobre',
+    },
+]
 
 export default function Menu() {
     
-    const links = [
-        {
-            texto: 'Home',
-            url: '/',
-        },
-        {
-            texto: 'Perguntas frequentes',
-            url: '/faq',
-        },
-        {
-            texto: 'Sobre',
-            url: '/sobre',
-        },
-    ]
-
     return (
         <MenuWrapper>
             <MenuWrapper.LeftSide>
@@ -30,9 +30,9 @@ export default function Menu() {
                 {links.map((link) => {
                     return (
                         <li key={link.url}>
-                            <a href={link.url}>
+                            <Text variant="smallestException" tag="a" href={link.url}>
                                 {link.texto}
-                            </a>
+                            </Text>
                         </li>
                     )
                 })}
