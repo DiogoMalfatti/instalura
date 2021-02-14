@@ -1,5 +1,5 @@
 import  theme  from '../index'
-import { css } from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const { breakpoints } = theme
 
