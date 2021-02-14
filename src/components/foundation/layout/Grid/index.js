@@ -26,6 +26,7 @@ const Container = styled.div`
             max-width: 1222px;
         `,
     })}
+    ${propToStyle('marginTop')}
 `;
 const Row = styled.div`
     display: flex;
@@ -113,6 +114,10 @@ const Col = styled.div`
             }),
         });
     }}
+    ${propToStyle('display')}
+    ${propToStyle('alignItems')}
+    ${propToStyle('justifyContent')}
+    ${propToStyle('flexDirection')}
 `;
 
 Col.defaultProps = {

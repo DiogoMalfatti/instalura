@@ -4,23 +4,33 @@ import Text from '../src/components/foundation/Text'
 import { Button } from '../src/components/commons/Button'
 import Footer from '../src/components/commons/Footer'
 import { Grid } from '../src/components/foundation/layout/Grid'
+import { Box } from '../src/components/foundation/layout/Box'
 
 export default function Home() {
 
     return (
-        <div style={{
-            flex: '1',
-            display: 'flex',
-            flexWrap: 'wrap',
-            flexDirection: 'column',
-            justifyContent: 'space-between'
-        }}>
+        <Box
+            flex= "1"
+            display= "flex"
+            flexWrap= "wrap"
+            flexDirection= "column"
+            justifyContent= "space-between"
+            backgroundImage= "url(/images/bubbles.svg)"
+            backgroundRepeat= "no-repeat"
+            backgroundPosition= "bottom right"
+        >
             <Menu />
-                <Grid.Container>
+                <Grid.Container
+                    marginTop={{xs: '32px', md: '75px'}}
+                >
                     <Grid.Row>
                         <Grid.Col
                             offset={{ xs: 0, md: 1 }}
                             value={{ xs: 12, md: 5 }}
+                            display= "flex"
+                            alignItems= "flex-start"
+                            justifyContent= "center"
+                            flexDirection= "column"
                         >
                             <Text
                                 variant="title"
@@ -58,6 +68,6 @@ export default function Home() {
                     </Grid.Row>
                 </Grid.Container>
             <Footer />
-        </div>
+        </Box>
     )
 }
