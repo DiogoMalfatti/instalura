@@ -34,7 +34,7 @@ export default function Home() {
             {...propsDoModal}
           >
             <div>
-              Nosso modal lindo 2
+              Nosso conteudo pro modal lindo 2
             </div>
           </Box>
         )}
