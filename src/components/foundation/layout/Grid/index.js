@@ -32,6 +32,11 @@ const Row = styled.div`
   flex-wrap: wrap;
   margin-right: -16px;
   margin-left: -16px;
+
+  ${propToStyle('flex')}
+  ${propToStyle('marginLeft')}
+  ${propToStyle('marginRight')}
+  ${propToStyle('justifyContent')}
 `;
 const Col = styled.div`
   padding-right: 16px;
@@ -113,10 +118,12 @@ const Col = styled.div`
       }),
     });
   }}
+  
   ${propToStyle('display')}
   ${propToStyle('alignItems')}
   ${propToStyle('justifyContent')}
   ${propToStyle('flexDirection')}
+  ${propToStyle('paddingRight')}
 `;
 
 Col.defaultProps = {
