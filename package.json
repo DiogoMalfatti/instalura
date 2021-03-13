@@ -10,6 +10,8 @@
     "commit": "cz"
   },
   "dependencies": {
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
     "@crello/react-lottie": "^0.0.11",
     "framer-motion": "^3.7.0",
     "lodash": "^4.17.20",
