@@ -8,11 +8,6 @@ import { Box } from '../../foundation/layout/Box';
 import { Grid } from '../../foundation/layout/Grid';
 import Text from '../../foundation/Text';
 
-console.log();
-console.log();
-console.log();
-console.log();
-
 const formStates = {
   DEFAULT: 'DEFAULT',
   LOADING: 'LOADING',
