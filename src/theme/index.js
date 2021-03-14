@@ -32,7 +32,7 @@ const colors = {
       contrastText: '#fff',
     },
     light: {
-      color: '#ccc',
+      color: '#333',
       contrastText: '#fff',
     },
   },
