@@ -27,112 +27,118 @@ const Container = styled.div`
   })}
   ${propToStyle('marginTop')}
 `;
-const Row = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -16px;
-  margin-left: -16px;
-
-  ${propToStyle('flex')}
-  ${propToStyle('marginLeft')}
-  ${propToStyle('marginRight')}
-  ${propToStyle('justifyContent')}
-`;
-const Col = styled.div`
-  padding-right: 16px;
-  padding-left: 16px;
-  flex-basis: 0;
-  flex-grow: 1;
-  max-width: 100%;
-  ${({ value }) => {
+export const Grid = {
+  Container,
+  Row: styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -16px;
+    margin-left: -16px;
+    ${propToStyle('flex')}
+    ${propToStyle('marginTop')}
+    ${propToStyle('marginLeft')}
+    ${propToStyle('marginRight')}
+    ${propToStyle('justifyContent')}
+    ${propToStyle('marginBottom')}
+    ${propToStyle('flexDirection')}
+  `,
+  Col: styled.div`
+    padding-right: 16px;
+    padding-left: 16px;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    ${({ value }) => {
     if (typeof value === 'number') {
       return css`
-        flex: 0 0 ${(100 * value) / 12}%;
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: ${(100 * value) / 12}%;
         max-width: ${(100 * value) / 12}%;
       `;
     }
     return breakpointsMedia({
-      ...(value.xs && {
-        xs: css`
-          flex: 0 0 ${(100 * value.xs) / 12}%;
+      xs: value?.xs
+        ? css`
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: ${(100 * value.xs) / 12}%;
           max-width: ${(100 * value.xs) / 12}%;
-        `,
-      }),
-      ...(value.sm && {
-        sm: css`
-          flex: 0 0 ${(100 * value.sm) / 12}%;
+        `
+        : '',
+      sm: value?.sm
+        ? css`
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: ${(100 * value.sm) / 12}%;
           max-width: ${(100 * value.sm) / 12}%;
-        `,
-      }),
-      ...(value.md && {
-        md: css`
-          flex: 0 0 ${(100 * value.md) / 12}%;
+        `
+        : '',
+      md: value?.md
+        ? css`
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: ${(100 * value.md) / 12}%;
           max-width: ${(100 * value.md) / 12}%;
-        `,
-      }),
-      ...(value.lg && {
-        lg: css`
-          flex: 0 0 ${(100 * value.lg) / 12}%;
+        `
+        : '',
+      lg: value?.lg
+        ? css`
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: ${(100 * value.lg) / 12}%;
           max-width: ${(100 * value.lg) / 12}%;
-        `,
-      }),
-      ...(value.xl && {
-        xl: css`
-          flex: 0 0 ${(100 * value.xl) / 12}%;
+        `
+        : '',
+      xl: value?.xl
+        ? css`
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: ${(100 * value.xl) / 12}%;
           max-width: ${(100 * value.xl) / 12}%;
-        `,
-      }),
+        `
+        : '',
     });
   }}
-  ${({ offset }) => {
+    ${({ offset }) => {
     if (typeof offset === 'number') {
       return css`
         margin-left: ${(100 * offset) / 12}%;
       `;
     }
     return breakpointsMedia({
-      ...(offset.xs && {
-        xs: css`
+      xs: offset?.xs
+        ? css`
           margin-left: ${(100 * offset.xs) / 12}%;
-        `,
-      }),
-      ...(offset.sm && {
-        sm: css`
+        `
+        : '',
+      sm: offset?.sm
+        ? css`
           margin-left: ${(100 * offset.sm) / 12}%;
-        `,
-      }),
-      ...(offset.md && {
-        md: css`
+        `
+        : '',
+      md: offset?.md
+        ? css`
           margin-left: ${(100 * offset.md) / 12}%;
-        `,
-      }),
-      ...(offset.lg && {
-        lg: css`
+        `
+        : '',
+      lg: offset?.lg
+        ? css`
           margin-left: ${(100 * offset.lg) / 12}%;
-        `,
-      }),
-      ...(offset.xl && {
-        xl: css`
+        `
+        : '',
+      xl: offset?.xl
+        ? css`
           margin-left: ${(100 * offset.xl) / 12}%;
-        `,
-      }),
+        `
+        : '',
     });
   }}
-  
-  ${propToStyle('display')}
-  ${propToStyle('alignItems')}
-  ${propToStyle('justifyContent')}
-  ${propToStyle('flexDirection')}
-  ${propToStyle('paddingRight')}
-`;
-
-Col.defaultProps = {
-  value: {},
-  offset: {},
-};
-
-export const Grid = {
-  Container,
-  Row,
-  Col,
+    ${propToStyle('display')}
+    ${propToStyle('alignItems')}
+    ${propToStyle('justifyContent')}
+    ${propToStyle('flexDirection')}
+    ${propToStyle('paddingRight')}
+    ${propToStyle('order')}
+  `,
 };
