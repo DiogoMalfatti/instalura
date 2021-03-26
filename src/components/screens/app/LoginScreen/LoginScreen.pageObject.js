@@ -2,7 +2,7 @@ export default class LoginScreenPageObject {
   constructor(cy) {
     this.cy = cy;
 
-    this.cy.visit('/app/login');
+    this.cy.visit('/app/login/');
   }
 
   fillLoginForm({ user, password }) {
